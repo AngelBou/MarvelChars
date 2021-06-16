@@ -1,7 +1,9 @@
 # MarvelChars App
 
 App to see all Marvels characters in a list and the detail of a chosen character
+
 The app uses the Marvel api (https://developer.marvel.com/docs)
+
 This app is made to show the Viper Architecture and the unit testing, ui testing potential of this architecture.
 
 ### Features
