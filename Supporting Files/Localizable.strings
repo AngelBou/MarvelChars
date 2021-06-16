@@ -1,0 +1,18 @@
+/*
+  Localizable.strings
+  MarvelChars
+
+  Created by Angel Boullon on 13/06/2021.
+  
+*/
+
+/* Common */
+"Common_Error" = "Error";
+"Common_ok" = "Ok";
+
+/* CharList */
+"CharList_screen_title" = "MARVEL Characters";
+
+/* CharDetail */
+"CharDetail_description" = "This character";
+"CharDetail_description_part2" = "belongs to the Marvel universe living amazing adventures";

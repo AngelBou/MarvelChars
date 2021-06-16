@@ -1,0 +1,8 @@
+# By default, SwiftLint uses a set of sensible default rules you can adjust:
+disabled_rules: # rule identifiers turned on by default to exclude from running
+#- type_name
+- trailing_whitespace
+- comment_spacing
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+line_length: 160

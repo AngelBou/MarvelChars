@@ -1,0 +1,394 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2021 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
+  "etag": "7af57805dfc9f80c80aa0d0598f45f301ed8aac6",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 2,
+    "count": 2,
+    "results": [
+      {
+        "id": 1010763,
+        "name": "Gamora",
+        "description": "",
+        "modified": "2016-06-02T13:39:18-0400",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/526032a2cce62",
+          "extension": "jpg"
+        },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010763",
+        "comics": {
+          "available": 69,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010763/comics",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/62149",
+              "name": "ALL-NEW GUARDIANS OF THE GALAXY VOL. 1: COMMUNICATION BREAKDOWN TPB (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/62150",
+              "name": "All-New Guardians of the Galaxy Vol. 2: Riders in the Sky (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/62151",
+              "name": "All-New Guardians of the Galaxy Vol. 3: Infinity Quest (Trade Paperback)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/5230",
+              "name": "Annihilation (2006) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4219",
+              "name": "Annihilation: Ronan (2006) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4316",
+              "name": "Annihilation: Ronan (2006) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4471",
+              "name": "Annihilation: Ronan (2006) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4822",
+              "name": "Annihilation: The Nova Corps (2006) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/51841",
+              "name": "Gamora (2016) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/51843",
+              "name": "Gamora (2016) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/51845",
+              "name": "Gamora (2016) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/51846",
+              "name": "Gamora (2016) #4"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/51847",
+              "name": "Gamora (2016) #5"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/43305",
+              "name": "Guardians of the Galaxy (2013) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/46138",
+              "name": "Guardians of the Galaxy (2013) #1 (Manara Variant)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/43304",
+              "name": "Guardians of the Galaxy (2013) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/55472",
+              "name": "Guardians of the Galaxy (2015) #9"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/55475",
+              "name": "Guardians of the Galaxy (2015) #12"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/60979",
+              "name": "Guardians of the Galaxy (2015) #17"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/25305",
+              "name": "Guardians of the Galaxy (2008) #17"
+            }
+          ],
+          "returned": 20
+        },
+        "series": {
+          "available": 31,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010763/series",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22776",
+              "name": "ALL-NEW GUARDIANS OF THE GALAXY VOL. 1: COMMUNICATION BREAKDOWN TPB (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22777",
+              "name": "All-New Guardians of the Galaxy Vol. 2: Riders in the Sky (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22778",
+              "name": "All-New Guardians of the Galaxy Vol. 3: Infinity Quest (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/3613",
+              "name": "Annihilation (2006 - 2007)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1079",
+              "name": "Annihilation: Ronan (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1115",
+              "name": "Annihilation: The Nova Corps (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/19427",
+              "name": "Gamora (2016 - 2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/19428",
+              "name": "Gamora: Memento Mori (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/4885",
+              "name": "Guardians of the Galaxy (2008 - 2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/16410",
+              "name": "Guardians of the Galaxy (2013 - 2015)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/20465",
+              "name": "Guardians of the Galaxy (2015 - 2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22493",
+              "name": "Guardians of the Galaxy: Dream On (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24300",
+              "name": "Infinity Countdown Prime (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24062",
+              "name": "Infinity War Aftermath (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24279",
+              "name": "Infinity Wars (2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22323",
+              "name": "MARVEL MASTERWORKS: THE AVENGERS VOL. 17 HC (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/20365",
+              "name": "Marvel Universe Guardians of the Galaxy (2015 - 2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/22648",
+              "name": "Nova (2016 - 2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2504",
+              "name": "Nova (2007 - 2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/16411",
+              "name": "Nova (2013 - 2015)"
+            }
+          ],
+          "returned": 20
+        },
+        "stories": {
+          "available": 73,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010763/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5935",
+              "name": "Annihilation: Ronan (2006) #2",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5937",
+              "name": "Annihilation: Ronan (2006) #3",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5939",
+              "name": "Annihilation: Ronan (2006) #4",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5960",
+              "name": "3 of 6 - Annihilation",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/6149",
+              "name": "Cover #6149",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/32618",
+              "name": "Annihilation: Conquest 1 of 4",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/33002",
+              "name": "Annihilation: Conquest 2 of 4",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/33339",
+              "name": "Annihilation: Conquest 3 of 4",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/33341",
+              "name": "Annihilation: Conquest 4 of 4",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/36899",
+              "name": "Drax vs. Gamora 3 of 3",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/39240",
+              "name": "Assault on Monster Isle",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/39298",
+              "name": "Cover #39298",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/39304",
+              "name": "Old Foes",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/44694",
+              "name": "Technarchy 1 of 2",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/45595",
+              "name": "Technarchy 2 of 2",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/52067",
+              "name": "Aftermath!",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/52069",
+              "name": "Guile",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/52071",
+              "name": "Reunion",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/55846",
+              "name": "Cover #55846",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/83507",
+              "name": "Cover From The Thanos Imperative: Devestation (2010) #1",
+              "type": "cover"
+            }
+          ],
+          "returned": 20
+        },
+        "events": {
+          "available": 5,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010763/events",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/229",
+              "name": "Annihilation"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/293",
+              "name": "Annihilation: Conquest"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/235",
+              "name": "Blood and Thunder"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/319",
+              "name": "Original Sin"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/294",
+              "name": "The Thanos Imperative"
+            }
+          ],
+          "returned": 5
+        },
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/characters/1010763/gamora?utm_campaign=apiRef&utm_source=03450d2d95b5457fe7505a3e92b19b7c"
+          },
+          {
+            "type": "wiki",
+            "url": "http://marvel.com/universe/Gamora?utm_campaign=apiRef&utm_source=03450d2d95b5457fe7505a3e92b19b7c"
+          },
+          {
+            "type": "comiclink",
+            "url": "http://marvel.com/comics/characters/1010763/gamora?utm_campaign=apiRef&utm_source=03450d2d95b5457fe7505a3e92b19b7c"
+          }
+        ]
+      },
+      {
+        "id": 1017324,
+        "name": "Gamora (Marvel War of Heroes)",
+        "description": "",
+        "modified": "2013-09-18T11:00:11-0400",
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/e0/5239bfe911e8e",
+          "extension": "jpg"
+        },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1017324",
+        "comics": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017324/comics",
+          "items": [],
+          "returned": 0
+        },
+        "series": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017324/series",
+          "items": [],
+          "returned": 0
+        },
+        "stories": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017324/stories",
+          "items": [],
+          "returned": 0
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017324/events",
+          "items": [],
+          "returned": 0
+        },
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/characters/20/gamora?utm_campaign=apiRef&utm_source=03450d2d95b5457fe7505a3e92b19b7c"
+          },
+          {
+            "type": "comiclink",
+            "url": "http://marvel.com/comics/characters/1017324/gamora_marvel_war_of_heroes?utm_campaign=apiRef&utm_source=03450d2d95b5457fe7505a3e92b19b7c"
+          }
+        ]
+      }
+    ]
+  }
+}

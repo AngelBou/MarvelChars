@@ -11,12 +11,62 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+
+        setupNetworkManager()
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        let viewController = buildInitialViewController()
+        let rootNavigationViewController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = rootNavigationViewController
+        window?.makeKeyAndVisible()
+    }
+
+    func buildInitialViewController() -> UIViewController {
+
+        if let value = ProcessInfo.processInfo.environment["initialScene"] {
+            
+            switch value {
+            case "CharDetail":
+                let character = Character(id: 5,
+                                          name: "Spiderman",
+                                          description: "Description of Character Text")
+                if let detailViewController = CharDetailConfigurator.createScene() as? CharDetailViewController {
+                    detailViewController.presenter?.character = character
+                    return detailViewController
+                } else {
+                    fallthrough
+                }
+            default:
+                return CharListConfigurator.createScene()
+            }
+        }
+        return CharListConfigurator.createScene()
+    }
+
+    func setupNetworkManager() {
+        if let value = ProcessInfo.processInfo.environment["fakeData"], value == "yes" {
+            ApiManager.sharedInstance.setFakeData(fakeData: true)
+            
+            if let jsonName = ProcessInfo.processInfo.environment["charactersServiceJsonName"] {
+                ApiManager.sharedInstance.charactersService?.jsonName = jsonName
+                ApiManager.sharedInstance.charactersService?.fakeResponse = .json
+            }
+            if ProcessInfo.processInfo.environment["charactersServiceError"] != nil {
+                ApiManager.sharedInstance.charactersService?.networkError = .networkFailure
+                ApiManager.sharedInstance.charactersService?.fakeResponse = .failure
+            }
+            
+        } else {
+            ApiManager.sharedInstance.setFakeData(fakeData: false)
+            
+            // UI Testing can configure baseURL
+            if let baseURL = ProcessInfo.processInfo.environment["baseURL"] {
+                ApiManager.baseURL = baseURL
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +97,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-
