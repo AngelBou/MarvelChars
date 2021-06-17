@@ -71,7 +71,7 @@ $ python -m SimpleHTTPServer
 |       + -- Services
 +-- Supporting Files    (localization)
 +-- MarvelCharTests     (Unit testing)
-|       + -- Mock       (json files)
 +-- MarvelCharUITests   (UI testing)
+|       + -- Mock       (json files)
 |       + --marvelServerMock (files not included for any target. Only to run test server)
 ```

@@ -210,7 +210,6 @@
 		0B1998022678A1AD00E7C866 /* MarvelCharsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0BD2E5A3267961770059C465 /* Mock */,
 				0BAE9F96267A02A700416EDF /* CharDetail */,
 				0BD2E5E2267962AB0059C465 /* CharList */,
 				0BD2E5CC267962170059C465 /* Utils */,
@@ -222,6 +221,7 @@
 		0B19980D2678A1AD00E7C866 /* MarvelCharsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0BD2E5A3267961770059C465 /* Mock */,
 				0B34B7F5267BC3B600519219 /* marvelServerMock */,
 				0B19980E2678A1AD00E7C866 /* MarvelCharsUITests.swift */,
 				0B34B79C267BB5F600519219 /* Config_UITEST.plist */,
