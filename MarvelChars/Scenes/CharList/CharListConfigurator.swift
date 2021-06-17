@@ -12,7 +12,7 @@ class CharListConfigurator {
     static func createScene() -> UIViewController {
 
         let interactor = CharListInteractor()
-        interactor.apiManager = ApiManager.sharedInstance
+        interactor.charactersService = CharactersService()
 
         let presenter = CharListPresenter()
         presenter.router = CharListRouter()

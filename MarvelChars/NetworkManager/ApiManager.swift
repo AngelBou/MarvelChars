@@ -38,45 +38,24 @@ struct Root: Decodable {
     let marvelServerURL: String
 }
 
-enum FakeServiceResponse {
-    case json
-    case jsonData
-    case image
-    case failure
-}
-
-protocol ServiceProtocol {
-    var fakeData: Bool { get set }
-
-    associatedtype FakeResponseType
-    func fakeDataResponse() -> (Result<FakeResponseType, NetworkError>)
-}
-
 final class ApiManager {
 
     static let sharedInstance = ApiManager()
     
-    var charactersService: CharactersServiceProtocol?
-    var imageService: ImageServiceProtocol?
     static var baseURL: String = defaultBaseUrl()
     
     private let session = URLSession(configuration: .default)
 
     static func defaultBaseUrl() -> String {
+        var baseUrl = ""
         if let config = Bundle.main.object(forInfoDictionaryKey: "ServerConfigFile") as? String {
             if let url = Bundle.main.url(forResource: config, withExtension: "plist") {
                 if let data = try? Data(contentsOf: url), let result = try? PropertyListDecoder().decode(Root.self, from: data) {
-                return result.marvelServerURL
+                    baseUrl = result.marvelServerURL
                 }
             }
         }
-        return ""
-    }
-    
-    // MARK: - setters
-    func setFakeData(fakeData: Bool) {
-        charactersService = CharactersService(fakeData: fakeData)
-        imageService = ImageService(fakeData: fakeData)
+        return baseUrl
     }
     
     // MARK: - Requests
@@ -110,7 +89,6 @@ final class ApiManager {
     }
 
     func fetchImage(url: String, completion: @escaping (Result<Data?, NetworkError>) -> Void) {
-        //let session = URLSession.shared
         let url = URL(string: url)
 
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
@@ -146,6 +124,5 @@ final class ApiManager {
             // Ok
             return nil
         }
-        
     }
 }

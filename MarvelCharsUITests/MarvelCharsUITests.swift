@@ -34,7 +34,6 @@ class MarvelCharsUITests: XCTestCase {
     }
     
     func testStartingFromHomeScreen() {
-        configureApp(json: "Spiderman")
         app.launch()
         
         listScreenIsShown()
@@ -42,22 +41,20 @@ class MarvelCharsUITests: XCTestCase {
 
     func testCharListNavigateToDetailWhenTapOnItem() throws {
         
-        configureApp(json: "Loki")
         app.launch()
         
-        let name = "Loki"
+        let name = "A.I.M."
         // When
         listScreenIsShown()
 
-        // When Tap in cell of "Loki"
+        // When Tap in cell of "A.I.M."
         tapCell(name: name)
 
-        // Then navigate to Detail of char "Loki"
+        // Then navigate to Detail of char "A.I.M."
         detailScreenIsShown(with: name)
     }
     
     func testNavigationFromListToDetail() {
-        configureApp(json: "Spiderman")
         app.launch()
         
         // Given
@@ -71,7 +68,6 @@ class MarvelCharsUITests: XCTestCase {
     }
     
     func testNavigationFromDetailBackToList() {
-        configureApp(json: "GamoraSearch")
         app.launch()
         
         // Given
@@ -85,44 +81,6 @@ class MarvelCharsUITests: XCTestCase {
         listScreenIsShown()
     }
     
-    func testErrorPopUpShownWithNetworkError() {
-        configureApp(networkError: "failure")
-        app.launch()
-        
-        // Given
-        listScreenIsShown()
-        
-        errorAlertIsShown()
-        
-        tapOkButtonErrorAlert()
-    }
-        
-    // Test with call to service
-    // NOTE this test can fail depending on the result given by the server
-    func testCharListNavigateToDetailWhenTapOnTestServer() throws {
-        
-        configureApp(fakeData: "no")
-        app.launch()
-        
-        let name = "Abyss (Age of Apocalypse)"
-        // When
-        listScreenIsShown()
-
-        // When Tap in cell of "Abyss (Age of Apocalypse)"
-        tapCell(name: name)
-
-        // Then navigate to Detail of char "Abyss (Age of Apocalypse)"
-        detailScreenIsShown(with: name)
-    }
-    
-    func testShowDetail() {
-        configureApp(initialScene: "CharDetail")
-        app.launch()
-        
-        detailScreenIsShown()
-        
-    }
-    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
@@ -134,22 +92,6 @@ class MarvelCharsUITests: XCTestCase {
 }
 
 extension MarvelCharsUITests {
-    
-    func configureApp(fakeData: String? = "yes",
-                      json: String? = nil,
-                      networkError: String? = nil,
-                      initialScene: String? = nil) {
-        
-        var environment: [String: String] = [:]
-        environment["fakeData"] = fakeData
-        
-        environment["charactersServiceJsonName"] = json
-        environment["charactersServiceError"] = networkError
-        
-        environment["initialScene"] = initialScene
-        
-        app.launchEnvironment = environment
-    }
 
     // MARK: - Actions
     func tapCell(row: Int) {
@@ -177,13 +119,4 @@ extension MarvelCharsUITests {
     func detailScreenIsShown(with name: String) {
         XCTAssert(app.navigationBars[name].exists)
     }
-    
-    func errorAlertIsShown() {
-        XCTAssertEqual(app.alerts.element.label, "Error")
-    }
-    
-    func tapOkButtonErrorAlert() {
-        app.alerts["Error"].buttons["Ok"].tap()
-    }
-    
 }

@@ -92,7 +92,7 @@ class CharDetailViewControllerTests: XCTestCase {
         
         func getPhoto(for character: Character) {
             let bundle = Bundle(for: type(of: self))
-            if let image = UIImage(named: "thumbnail", in: bundle, with: nil) {
+            if let image = UIImage(named: "placeholder", in: bundle, with: nil) {
                 presenter?.presentPhoto(image)
             }
         }

@@ -10,7 +10,6 @@ This app is made to show the Viper Architecture and the unit testing, ui testing
 - VIPER Architecture
 - Unit Tests
 - UI Tests
-- Mock data
 - Diferent environments for production, develeop, testing 
 - Uses swiftLint to style swift code (https://github.com/realm/SwiftLint)
 - Localization ready for other languages (currently only English)
@@ -38,27 +37,24 @@ To change  server url, change value of key marvelServerURL in:
 
 ### UI Testing
 - Using native testing.
-- App configuration through environment variables
-- Each test can choose to run again real server (development server or production server) or against a mocked json response
-- Each test can Mock network errors from services or fake json responses (some json files included)
-- Each test can choose the initial scene (one of the two). In a future development it can be used to test serveral use cases (flows) that require a different start scene. 
+- NOTE: The test in MarvelCharsUITestsNoServer fails when test server is up and success is server is down, or return an error
 
-#### Note for UI Testing 
-I included a folder that will make as the server to call for characters. Limited to 14 in order to test UI Testing with a test server.
+In the project there is a folder for using as a test server. To run this test server there is an easy way of doing it:
 
-An easy way of testing this is running in a terminal, in marvelServerMock folder this command. This will run a very small http server. As python 2.7 is included in MacOs, no need to install anything.
+In a terminal of MacOS, in marvelServerMock folder use the following command (This will run a very small http server and as python 2.7 is included in MacOs, there is no need to install anything)
 
 $ python -m SimpleHTTPServer
 
 
 ### Notes 
-- No frameworks needed.
-- Not all tests are implemented. I have choosen the unit and ui tests that show how to cover all different cases
+- No frameworks.
+- Not all tests are implemented. I have choosen some unit and ui tests to cover different cases
 
 
 ### Project Structure
 ```
 .
++-- README.md
 +-- swiftlint.yml
 +-- MarvelChars
 |   ...
@@ -71,7 +67,7 @@ $ python -m SimpleHTTPServer
 |       + -- Services
 +-- Supporting Files    (localization)
 +-- MarvelCharTests     (Unit testing)
-+-- MarvelCharUITests   (UI testing)
 |       + -- Mock       (json files)
++-- MarvelCharUITests   (UI testing)
 |       + --marvelServerMock (files not included for any target. Only to run test server)
 ```

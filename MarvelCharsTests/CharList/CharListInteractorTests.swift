@@ -25,9 +25,7 @@ class CharListInteractorTests: XCTestCase {
 
         sut = CharListInteractor()
         sut.presenter = presenterSpy
-        let apiManager = ApiManager.sharedInstance
-        apiManager.charactersService = charactersServiceSpy
-        sut.apiManager = apiManager
+        sut.charactersService = charactersServiceSpy
     }
 
     override func tearDownWithError() throws {
@@ -37,7 +35,7 @@ class CharListInteractorTests: XCTestCase {
     func testInteractorgetCharactersCallsgetCharactersFromServiceWithError() {
         // Given
         charactersServiceSpy.setSuccess(false)
-        sut.apiManager?.charactersService = charactersServiceSpy
+        sut.charactersService = charactersServiceSpy
 
         // When
         sut.getCharacters()
@@ -53,7 +51,7 @@ class CharListInteractorTests: XCTestCase {
     func testInteractorCallsPresentCharactersWhenNoPagination() {
         // Given
         charactersServiceSpy.setSuccess(true)
-        sut.apiManager?.charactersService = charactersServiceSpy
+        sut.charactersService = charactersServiceSpy
 
         // When
         sut.getCharacters()
@@ -66,7 +64,7 @@ class CharListInteractorTests: XCTestCase {
     func testInteractorCallsPresentMoreCharactersWhenPagination() {
         // Given
         charactersServiceSpy.setSuccess(true)
-        sut.apiManager?.charactersService = charactersServiceSpy
+        sut.charactersService = charactersServiceSpy
 
         // When
         sut.getMoreCharacters()
@@ -121,11 +119,6 @@ class CharListInteractorTests: XCTestCase {
     }
 
     class CharactersServiceSpy: CharactersServiceProtocol {
-        var fakeData: Bool = false
-        var jsonName: String = ""
-        var jsonFake: [String: String] = [ : ]
-        var networkError: NetworkError = .networkFailure
-        var fakeResponse: FakeServiceResponse = .json
 
         var success: Bool
         var characters: [Character] = []
@@ -136,7 +129,7 @@ class CharListInteractorTests: XCTestCase {
             getCharactersCalled = true
             if success {
                 let bundle = Bundle(for: type(of: self))
-                let characters = Utils.readJSONFromFile(name: "Loki", bundle: bundle)
+                let characters = Json.readJSONFromFile(name: "Loki", bundle: bundle)
                 return completion(.success(characters))
             } else {
                 return completion(.failure(.networkFailure))

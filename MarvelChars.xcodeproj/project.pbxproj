@@ -46,21 +46,12 @@
 		0B34B790267BB56500519219 /* Config_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B78F267BB56500519219 /* Config_DEV.plist */; };
 		0B34B7B2267BBB2800519219 /* Config_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B7A1267BB6BE00519219 /* Config_PROD.plist */; };
 		0B34B7BC267BBCA200519219 /* Config_UITEST.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B79C267BB5F600519219 /* Config_UITEST.plist */; };
+		0B34B82A267BD90100519219 /* MarvelCharsUITestsNoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B34B829267BD90100519219 /* MarvelCharsUITestsNoServer.swift */; };
+		0B34B835267BFFCE00519219 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B34B834267BFFCD00519219 /* Json.swift */; };
 		0BAE9F902679F74300416EDF /* CharDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE9F8F2679F74300416EDF /* CharDetailViewControllerTests.swift */; };
 		0BD2E55A267951220059C465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1997F52678A1AC00E7C866 /* Assets.xcassets */; };
 		0BD2E563267951220059C465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1997F52678A1AC00E7C866 /* Assets.xcassets */; };
-		0BD2E5A8267961BA0059C465 /* 1010763.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A4267961B90059C465 /* 1010763.json */; };
-		0BD2E5AA267961BA0059C465 /* 1010763.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A4267961B90059C465 /* 1010763.json */; };
-		0BD2E5AB267961BA0059C465 /* 1010763.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A4267961B90059C465 /* 1010763.json */; };
-		0BD2E5AC267961BA0059C465 /* GamoraSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A5267961BA0059C465 /* GamoraSearch.json */; };
-		0BD2E5AE267961BA0059C465 /* GamoraSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A5267961BA0059C465 /* GamoraSearch.json */; };
-		0BD2E5AF267961BA0059C465 /* GamoraSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A5267961BA0059C465 /* GamoraSearch.json */; };
-		0BD2E5B0267961BA0059C465 /* Loki.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A6267961BA0059C465 /* Loki.json */; };
 		0BD2E5B2267961BA0059C465 /* Loki.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A6267961BA0059C465 /* Loki.json */; };
-		0BD2E5B3267961BA0059C465 /* Loki.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A6267961BA0059C465 /* Loki.json */; };
-		0BD2E5B4267961BA0059C465 /* Spiderman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A7267961BA0059C465 /* Spiderman.json */; };
-		0BD2E5B6267961BA0059C465 /* Spiderman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A7267961BA0059C465 /* Spiderman.json */; };
-		0BD2E5B7267961BA0059C465 /* Spiderman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD2E5A7267961BA0059C465 /* Spiderman.json */; };
 		0BD2E5D02679624F0059C465 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2E5CD2679624F0059C465 /* UtilsTests.swift */; };
 		0BD2E5E5267962AB0059C465 /* CharListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2E5E3267962AB0059C465 /* CharListPresenterTests.swift */; };
 		0BD2E5E6267962AB0059C465 /* CharListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2E5E4267962AB0059C465 /* CharListInteractorTests.swift */; };
@@ -131,12 +122,12 @@
 		0B34B7A1267BB6BE00519219 /* Config_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_PROD.plist; sourceTree = "<group>"; };
 		0B34B7F8267BC3B600519219 /* characters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = characters; sourceTree = "<group>"; };
 		0B34B7FD267BC3B600519219 /* 5202887448860.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5202887448860.jpg; sourceTree = "<group>"; };
+		0B34B829267BD90100519219 /* MarvelCharsUITestsNoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharsUITestsNoServer.swift; sourceTree = "<group>"; };
+		0B34B834267BFFCD00519219 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		0B34B839267C058C00519219 /* image_not_available.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_not_available.jpg; sourceTree = "<group>"; };
 		0BAE9F8F2679F74300416EDF /* CharDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		0BD2E59C26795DE30059C465 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		0BD2E5A4267961B90059C465 /* 1010763.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1010763.json; sourceTree = "<group>"; };
-		0BD2E5A5267961BA0059C465 /* GamoraSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GamoraSearch.json; sourceTree = "<group>"; };
 		0BD2E5A6267961BA0059C465 /* Loki.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loki.json; sourceTree = "<group>"; };
-		0BD2E5A7267961BA0059C465 /* Spiderman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Spiderman.json; sourceTree = "<group>"; };
 		0BD2E5CD2679624F0059C465 /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		0BD2E5E3267962AB0059C465 /* CharListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharListPresenterTests.swift; sourceTree = "<group>"; };
 		0BD2E5E4267962AB0059C465 /* CharListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharListInteractorTests.swift; sourceTree = "<group>"; };
@@ -210,6 +201,7 @@
 		0B1998022678A1AD00E7C866 /* MarvelCharsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0BD2E5A3267961770059C465 /* Mock */,
 				0BAE9F96267A02A700416EDF /* CharDetail */,
 				0BD2E5E2267962AB0059C465 /* CharList */,
 				0BD2E5CC267962170059C465 /* Utils */,
@@ -221,9 +213,9 @@
 		0B19980D2678A1AD00E7C866 /* MarvelCharsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0BD2E5A3267961770059C465 /* Mock */,
 				0B34B7F5267BC3B600519219 /* marvelServerMock */,
 				0B19980E2678A1AD00E7C866 /* MarvelCharsUITests.swift */,
+				0B34B829267BD90100519219 /* MarvelCharsUITestsNoServer.swift */,
 				0B34B79C267BB5F600519219 /* Config_UITEST.plist */,
 				0B1998102678A1AD00E7C866 /* Info.plist */,
 			);
@@ -349,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				0B34B7FD267BC3B600519219 /* 5202887448860.jpg */,
+				0B34B839267C058C00519219 /* image_not_available.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -364,10 +357,8 @@
 		0BD2E5A3267961770059C465 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				0BD2E5A4267961B90059C465 /* 1010763.json */,
-				0BD2E5A7267961BA0059C465 /* Spiderman.json */,
-				0BD2E5A5267961BA0059C465 /* GamoraSearch.json */,
 				0BD2E5A6267961BA0059C465 /* Loki.json */,
+				0B34B834267BFFCD00519219 /* Json.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -495,13 +486,9 @@
 			files = (
 				0B1997F92678A1AC00E7C866 /* LaunchScreen.storyboard in Resources */,
 				0B1999A9267902E900E7C866 /* Localizable.strings in Resources */,
-				0BD2E5B0267961BA0059C465 /* Loki.json in Resources */,
 				0B1997F62678A1AC00E7C866 /* Assets.xcassets in Resources */,
 				0B1997F42678A1A900E7C866 /* Main.storyboard in Resources */,
-				0BD2E5AC267961BA0059C465 /* GamoraSearch.json in Resources */,
-				0BD2E5A8267961BA0059C465 /* 1010763.json in Resources */,
 				0B34B790267BB56500519219 /* Config_DEV.plist in Resources */,
-				0BD2E5B4267961BA0059C465 /* Spiderman.json in Resources */,
 				0B34B7BC267BBCA200519219 /* Config_UITEST.plist in Resources */,
 				0B34B7B2267BBB2800519219 /* Config_PROD.plist in Resources */,
 			);
@@ -512,9 +499,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BD2E5B2267961BA0059C465 /* Loki.json in Resources */,
-				0BD2E5AA267961BA0059C465 /* 1010763.json in Resources */,
-				0BD2E5AE267961BA0059C465 /* GamoraSearch.json in Resources */,
-				0BD2E5B6267961BA0059C465 /* Spiderman.json in Resources */,
 				0BD2E55A267951220059C465 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,10 +507,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD2E5B3267961BA0059C465 /* Loki.json in Resources */,
-				0BD2E5AB267961BA0059C465 /* 1010763.json in Resources */,
-				0BD2E5AF267961BA0059C465 /* GamoraSearch.json in Resources */,
-				0BD2E5B7267961BA0059C465 /* Spiderman.json in Resources */,
 				0BD2E563267951220059C465 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +578,7 @@
 				0B34B74F267B71E600519219 /* Utils.swift in Sources */,
 				0BD2E5E6267962AB0059C465 /* CharListInteractorTests.swift in Sources */,
 				0BAE9F902679F74300416EDF /* CharDetailViewControllerTests.swift in Sources */,
+				0B34B835267BFFCE00519219 /* Json.swift in Sources */,
 				0BD2E5E5267962AB0059C465 /* CharListPresenterTests.swift in Sources */,
 				0BD2E5D02679624F0059C465 /* UtilsTests.swift in Sources */,
 			);
@@ -607,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B34B82A267BD90100519219 /* MarvelCharsUITestsNoServer.swift in Sources */,
 				0B19980F2678A1AD00E7C866 /* MarvelCharsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

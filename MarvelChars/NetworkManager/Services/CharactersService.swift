@@ -9,52 +9,16 @@ import Foundation
 
 protocol CharactersServiceProtocol {
     func getCharacters(nameStartsWith: String?, limit: Int?, page: Int, completion: @escaping (Result<[String: Any]?, NetworkError>) -> Void)
-    
-    var fakeData: Bool { get set }
-    var jsonName: String { get set }
-    var jsonFake: [String: String] { get set }
-    var networkError: NetworkError { get set }
-    var fakeResponse: FakeServiceResponse { get set }
 }
 
-class CharactersService: CharactersServiceProtocol, ServiceProtocol {
-
-    var fakeData: Bool = false
-    var jsonName: String = "Loki" // Default json response
-    var jsonFake: [String: String] = [:]
-    var networkError: NetworkError = .networkFailure // Default network error
-    var fakeResponse: FakeServiceResponse = .json
+class CharactersService: CharactersServiceProtocol {
 
     let defaultLimit = 100   // Default limit for characters endpoint call. valid value between 1..100
-
-    init(fakeData: Bool) {
-        self.fakeData = fakeData
-    }
-
-    func fakeDataResponse() -> (Result<[String: Any]?, NetworkError>) {
-        switch fakeResponse {
-        case .json:
-            let bundle = Bundle(for: type(of: self))
-            let json = Utils.readJSONFromFile(name: jsonName, bundle: bundle)
-            return .success(json)
-        case .jsonData:
-            return .success(jsonFake)
-        default:
-            return .failure(networkError)
-        }
-    }
 
     func getCharacters(nameStartsWith: String?,
                        limit: Int?,
                        page: Int,
                        completion: @escaping (Result<[String: Any]?, NetworkError>) -> Void) {
-
-        // Return Fake data for testing purposes
-        if fakeData {
-            completion(fakeDataResponse())
-            return
-        }
-
         // Call to Api to obtain response
         let urlString = ApiManager.baseURL + Endpoint.characters
         

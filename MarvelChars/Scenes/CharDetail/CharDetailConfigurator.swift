@@ -10,9 +10,8 @@ import UIKit
 class CharDetailConfigurator {
 
     static func createScene(character: Character) -> UIViewController {
-
         let interactor = CharDetailInteractor()
-        interactor.apiManager = ApiManager.sharedInstance
+        interactor.imageService = ImageService()
 
         let presenter = CharDetailPresenter(character: character)
         presenter.router = CharDetailRouter()

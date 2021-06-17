@@ -12,60 +12,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
-        setupNetworkManager()
-
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let viewController = buildInitialViewController()
+        let viewController = CharListConfigurator.createScene()
         let rootNavigationViewController = UINavigationController(rootViewController: viewController)
         self.window?.rootViewController = rootNavigationViewController
         window?.makeKeyAndVisible()
-    }
-
-    func buildInitialViewController() -> UIViewController {
-
-        if let value = ProcessInfo.processInfo.environment["initialScene"] {
-            
-            switch value {
-            case "CharDetail":
-                let character = Character(id: 5,
-                                          name: "Spiderman",
-                                          description: "Description of Character Text")
-                if let detailViewController = CharDetailConfigurator.createScene(character: character) as? CharDetailViewController {
-                    return detailViewController
-                } else {
-                    fallthrough
-                }
-            default:
-                return CharListConfigurator.createScene()
-            }
-        }
-        return CharListConfigurator.createScene()
-    }
-
-    func setupNetworkManager() {
-        if let value = ProcessInfo.processInfo.environment["fakeData"], value == "yes" {
-            ApiManager.sharedInstance.setFakeData(fakeData: true)
-            
-            if let jsonName = ProcessInfo.processInfo.environment["charactersServiceJsonName"] {
-                ApiManager.sharedInstance.charactersService?.jsonName = jsonName
-                ApiManager.sharedInstance.charactersService?.fakeResponse = .json
-            }
-            if ProcessInfo.processInfo.environment["charactersServiceError"] != nil {
-                ApiManager.sharedInstance.charactersService?.networkError = .networkFailure
-                ApiManager.sharedInstance.charactersService?.fakeResponse = .failure
-            }
-            
-        } else {
-            ApiManager.sharedInstance.setFakeData(fakeData: false)
-            
-            // UI Testing can configure baseURL
-            if let baseURL = ProcessInfo.processInfo.environment["baseURL"] {
-                ApiManager.baseURL = baseURL
-            }
-        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -14,20 +14,20 @@ protocol CharDetailInteractorInputProtocol {
 
 protocol CharDetailInteractorOutputProtocol {
     var presenter: CharDetailPresenterOutputProtocol? { get set }
-    var apiManager: ApiManager? {get set}
+    var imageService: ImageServiceProtocol? {get set}
 }
 
 class CharDetailInteractor: CharDetailInteractorInputProtocol, CharDetailInteractorOutputProtocol {
 
     weak var presenter: CharDetailPresenterOutputProtocol?
 
-    var apiManager: ApiManager?
+    var imageService: ImageServiceProtocol?
 
     func getPhoto(for character: Character) {
         
         var photo: UIImage?
 
-        apiManager?.imageService?.getImage(character) { (result) in
+        imageService?.getImage(character) { (result) in
             switch result {
             case .success(let image):
                 photo = image

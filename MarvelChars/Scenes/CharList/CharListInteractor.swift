@@ -13,13 +13,13 @@ protocol CharListInteractorInputProtocol {
 }
 
 protocol CharListInteractorOutputProtocol {
-    var apiManager: ApiManager? {get set}
+    var charactersService: CharactersServiceProtocol? {get set}
     var presenter: CharListPresenterOutputProtocol? { get set }
 }
 
 class CharListInteractor: CharListInteractorInputProtocol, CharListInteractorOutputProtocol {
     weak var presenter: CharListPresenterOutputProtocol?
-    var apiManager: ApiManager?
+    var charactersService: CharactersServiceProtocol?
 
     private var page: Int = 0
 
@@ -37,9 +37,9 @@ class CharListInteractor: CharListInteractorInputProtocol, CharListInteractorOut
             self.page += 1
         }
         
-        apiManager?.charactersService?.getCharacters(nameStartsWith: searchString,
-                                                     limit: 100,
-                                                     page: page) { (result) in
+        charactersService?.getCharacters(nameStartsWith: searchString,
+                                         limit: 100,
+                                         page: page) { (result) in
             switch result {
             case .success(let json):
                 
