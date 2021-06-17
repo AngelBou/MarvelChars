@@ -24,7 +24,7 @@ This app is made to show the Viper Architecture and the unit testing, ui testing
 | MarvelCharsUITests | testing     | http://localhost:8000       |   |
 
 Note: I have a testing server in http://localhost:8000 for running development and testing environments
-that mirror some the calls.
+that mirror some of the calls to the server.
 
 To change  server url, change value of key marvelServerURL in:
 - Supporting Files/Config_PROD.plist
