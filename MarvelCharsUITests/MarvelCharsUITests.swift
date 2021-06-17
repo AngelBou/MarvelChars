@@ -96,28 +96,12 @@ class MarvelCharsUITests: XCTestCase {
         
         tapOkButtonErrorAlert()
     }
-    
-    // Test with call to service in TESTING compilation
-    func testCharListNavigateToDetailWhenTapOnItemTestingServer() throws {
         
-        configureApp(fakeData: "no")
-        app.launch()
-        
-        let name = "Gamora"
-        // When
-        listScreenIsShown()
-
-        // When Tap in cell of "Gamora"
-        tapCell(name: name)
-
-        // Then navigate to Detail of char "Gamora"
-        detailScreenIsShown(with: name)
-    }
-    
-    // Test with call to service with real service baseUrl
+    // Test with call to service
+    // NOTE this test can fail depending on the result given by the server
     func testCharListNavigateToDetailWhenTapOnItemRealServer() throws {
         
-        configureApp(fakeData: "no", baseURL: "https://gateway.marvel.com")
+        configureApp(fakeData: "no")
         app.launch()
         
         let name = "Abyss (Age of Apocalypse)"
@@ -154,8 +138,7 @@ extension MarvelCharsUITests {
     func configureApp(fakeData: String? = "yes",
                       json: String? = nil,
                       networkError: String? = nil,
-                      initialScene: String? = nil,
-                      baseURL: String? = nil) {
+                      initialScene: String? = nil) {
         
         var environment: [String: String] = [:]
         environment["fakeData"] = fakeData
@@ -164,7 +147,6 @@ extension MarvelCharsUITests {
         environment["charactersServiceError"] = networkError
         
         environment["initialScene"] = initialScene
-        environment["baseURL"] =  baseURL
         
         app.launchEnvironment = environment
     }

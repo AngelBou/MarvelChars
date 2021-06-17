@@ -59,14 +59,7 @@ final class ApiManager {
     private let session = URLSession(configuration: .default)
 
     static func defaultBaseUrl() -> String {
-        #if PROD
-        return "https://gateway.marvel.com"
-        #elseif DEV
-        return "http://localhost:8000"
-        #else
-        // Testing Server
-        return "http://localhost:8000"
-        #endif
+        return Bundle.main.object(forInfoDictionaryKey: "MARVELServerUrl") as? String ?? ""
     }
     
     // MARK: - setters
