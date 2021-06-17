@@ -43,6 +43,13 @@ To change  server url, change value of key marvelServerURL in:
 - Each test can Mock network errors from services or fake json responses (some json files included)
 - Each test can choose the initial scene (one of the two). In a future development it can be used to test serveral use cases (flows) that require a different start scene. 
 
+#### Note for UI Testing 
+I included a folder that will make as the server to call for characters. Limited to 14 in order to test UI Testing with a test server.
+
+An easy way of testing this is running in a terminal, in marvelServerMock folder this command. This will run a very small http server. As python 2.7 is included in MacOs, no need to install anything.
+
+$ python -m SimpleHTTPServer
+
 
 ### Notes 
 - No frameworks needed.
@@ -66,4 +73,5 @@ To change  server url, change value of key marvelServerURL in:
 +-- MarvelCharTests     (Unit testing)
 |       + -- Mock       (json files)
 +-- MarvelCharUITests   (UI testing)
+|       + --marvelServerMock (files not included for any target. Only to run test server)
 ```

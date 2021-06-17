@@ -129,6 +129,8 @@
 		0B34B78F267BB56500519219 /* Config_DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_DEV.plist; sourceTree = "<group>"; };
 		0B34B79C267BB5F600519219 /* Config_UITEST.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_UITEST.plist; sourceTree = "<group>"; };
 		0B34B7A1267BB6BE00519219 /* Config_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_PROD.plist; sourceTree = "<group>"; };
+		0B34B7F8267BC3B600519219 /* characters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = characters; sourceTree = "<group>"; };
+		0B34B7FD267BC3B600519219 /* 5202887448860.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5202887448860.jpg; sourceTree = "<group>"; };
 		0BAE9F8F2679F74300416EDF /* CharDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		0BD2E59C26795DE30059C465 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0BD2E5A4267961B90059C465 /* 1010763.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1010763.json; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		0B19980D2678A1AD00E7C866 /* MarvelCharsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B34B7F5267BC3B600519219 /* marvelServerMock */,
 				0B19980E2678A1AD00E7C866 /* MarvelCharsUITests.swift */,
 				0B34B79C267BB5F600519219 /* Config_UITEST.plist */,
 				0B1998102678A1AD00E7C866 /* Info.plist */,
@@ -315,6 +318,39 @@
 				0B34B7A1267BB6BE00519219 /* Config_PROD.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B34B7F5267BC3B600519219 /* marvelServerMock */ = {
+			isa = PBXGroup;
+			children = (
+				0B34B7F6267BC3B600519219 /* v1 */,
+				0B34B7F9267BC3B600519219 /* images */,
+			);
+			path = marvelServerMock;
+			sourceTree = "<group>";
+		};
+		0B34B7F6267BC3B600519219 /* v1 */ = {
+			isa = PBXGroup;
+			children = (
+				0B34B7F7267BC3B600519219 /* public */,
+			);
+			path = v1;
+			sourceTree = "<group>";
+		};
+		0B34B7F7267BC3B600519219 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				0B34B7F8267BC3B600519219 /* characters */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		0B34B7F9267BC3B600519219 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0B34B7FD267BC3B600519219 /* 5202887448860.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		0BAE9F96267A02A700416EDF /* CharDetail */ = {
