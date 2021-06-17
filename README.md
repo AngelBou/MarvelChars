@@ -16,11 +16,11 @@ This app is made to show the Viper Architecture and the unit testing, ui testing
 - AccesibilyLabels of elements
 
 ### Schemes
-| Name               | Environment | Api url                    | Notes                              |
-| ------------------ |:-----------:| :------------------------: |-----------------------------------:|
-| MarvelChars_PROD   | release  | https://gateway.marvel.com |   |
-| MarvelChars        | development | http://localhost:8000      |      |
-| MarvelCharsUITests | testing     | http://localhost:8000       |   |
+| Name               | Environment | Api url                    |
+| ------------------ |:-----------:| -------------------------: |
+| MarvelChars_PROD   | release     | https://gateway.marvel.com |
+| MarvelChars        | development | http://localhost:8000      |
+| MarvelCharsUITests | testing     | http://localhost:8000      |
 
 Note: I have a testing server in http://localhost:8000 for running development and testing environments
 that mirror some of the calls to the server.
@@ -28,7 +28,7 @@ that mirror some of the calls to the server.
 To change  server url, change value of key marvelServerURL in:
 - Supporting Files/Config_PROD.plist
 - Supporting Files/Config_DEV.plist
-- Supporting Files/Config_UITEST.plist
+- MarvelCharsUITests/Config_UITEST.plist
 
 
 ### Unit Testing
@@ -69,5 +69,5 @@ $ python -m SimpleHTTPServer
 +-- MarvelCharTests     (Unit testing)
 |       + -- Mock       (json files)
 +-- MarvelCharUITests   (UI testing)
-|       + --marvelServerMock (files not included for any target. Only to run test server)
+|       + --marvelServerMock (files not included in any target. Only to help to run a test server)
 ```
