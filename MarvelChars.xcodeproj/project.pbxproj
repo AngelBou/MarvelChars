@@ -43,6 +43,9 @@
 		0B1999A9267902E900E7C866 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B1999A8267902E900E7C866 /* Localizable.strings */; };
 		0B1999B026790B8C00E7C866 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1999AF26790B8C00E7C866 /* ImageService.swift */; };
 		0B34B74F267B71E600519219 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1998A32678B29F00E7C866 /* Utils.swift */; };
+		0B34B790267BB56500519219 /* Config_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B78F267BB56500519219 /* Config_DEV.plist */; };
+		0B34B7B2267BBB2800519219 /* Config_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B7A1267BB6BE00519219 /* Config_PROD.plist */; };
+		0B34B7BC267BBCA200519219 /* Config_UITEST.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B34B79C267BB5F600519219 /* Config_UITEST.plist */; };
 		0BAE9F902679F74300416EDF /* CharDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE9F8F2679F74300416EDF /* CharDetailViewControllerTests.swift */; };
 		0BD2E55A267951220059C465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1997F52678A1AC00E7C866 /* Assets.xcassets */; };
 		0BD2E563267951220059C465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1997F52678A1AC00E7C866 /* Assets.xcassets */; };
@@ -123,6 +126,9 @@
 		0B1999A8267902E900E7C866 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0B1999AF26790B8C00E7C866 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		0B34B75C267B78FA00519219 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0B34B78F267BB56500519219 /* Config_DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_DEV.plist; sourceTree = "<group>"; };
+		0B34B79C267BB5F600519219 /* Config_UITEST.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_UITEST.plist; sourceTree = "<group>"; };
+		0B34B7A1267BB6BE00519219 /* Config_PROD.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config_PROD.plist; sourceTree = "<group>"; };
 		0BAE9F8F2679F74300416EDF /* CharDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		0BD2E59C26795DE30059C465 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0BD2E5A4267961B90059C465 /* 1010763.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1010763.json; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0B19980E2678A1AD00E7C866 /* MarvelCharsUITests.swift */,
+				0B34B79C267BB5F600519219 /* Config_UITEST.plist */,
 				0B1998102678A1AD00E7C866 /* Info.plist */,
 			);
 			path = MarvelCharsUITests;
@@ -304,6 +311,8 @@
 			children = (
 				0B1999A8267902E900E7C866 /* Localizable.strings */,
 				0B19999C2679028200E7C866 /* Texts.swift */,
+				0B34B78F267BB56500519219 /* Config_DEV.plist */,
+				0B34B7A1267BB6BE00519219 /* Config_PROD.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -455,7 +464,10 @@
 				0B1997F42678A1A900E7C866 /* Main.storyboard in Resources */,
 				0BD2E5AC267961BA0059C465 /* GamoraSearch.json in Resources */,
 				0BD2E5A8267961BA0059C465 /* 1010763.json in Resources */,
+				0B34B790267BB56500519219 /* Config_DEV.plist in Resources */,
 				0BD2E5B4267961BA0059C465 /* Spiderman.json in Resources */,
+				0B34B7BC267BBCA200519219 /* Config_UITEST.plist in Resources */,
+				0B34B7B2267BBB2800519219 /* Config_PROD.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +733,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Info.plist;
-				KEnv_MARVEL_API_URL = "http://localhost:8000";
+				KEnv_MARVEL_API_URL = Config_DEV;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -741,7 +753,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Info.plist;
-				KEnv_MARVEL_API_URL = "https://gateway.marvel.com";
+				KEnv_MARVEL_API_URL = Config_PROD;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -906,7 +918,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Info.plist;
-				KEnv_MARVEL_API_URL = "https://gateway.marvel.com";
+				KEnv_MARVEL_API_URL = Config_UITEST;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

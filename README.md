@@ -17,12 +17,20 @@ This app is made to show the Viper Architecture and the unit testing, ui testing
 - AccesibilyLabels of elements
 
 ### Schemes
-| Name               | Environment | Api Url                    | Notes                              |
+| Name               | Environment | Api url                    | Notes                              |
 | ------------------ |:-----------:| :------------------------: |-----------------------------------:|
-| MarvelChars_PROD   | production  | https://gateway.marvel.com | Build phase doesn't run swiftlin   |
-| MarvelChars        | development | http://localhost:8000      | Build phase runs swiftlint         |
-| MarvelCharsUITests | testing     | http://localhost:8000      | Build phase doesn't run swiftlin   |
-| SWiftLint          | development | http://localhost:8000      | Build phase runs swiftlint         |
+| MarvelChars_PROD   | release  | https://gateway.marvel.com |   |
+| MarvelChars        | development | http://localhost:8000      |      |
+| MarvelCharsUITests | testing     | http://localhost:8000       |   |
+
+Note: I have a testing server in http://localhost:8000 for running development and testing environments
+that mirror some the calls.
+
+To change  server url, change value of key marvelServerURL in:
+- Supporting Files/Config_PROD.plist
+- Supporting Files/Config_DEV.plist
+- Supporting Files/Config_UITEST.plist
+
 
 ### Unit Testing
 - Use test doubles for Viper presenter (https://en.wikipedia.org/wiki/Test_double)

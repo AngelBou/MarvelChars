@@ -34,6 +34,12 @@ enum Services {
     case imageService
 }
 
+struct Root : Decodable {
+    let marvelServerURL : String
+}
+
+
+
 enum FakeServiceResponse {
     case json
     case jsonData
@@ -59,7 +65,14 @@ final class ApiManager {
     private let session = URLSession(configuration: .default)
 
     static func defaultBaseUrl() -> String {
-        return Bundle.main.object(forInfoDictionaryKey: "MARVELServerUrl") as? String ?? ""
+        if let config = Bundle.main.object(forInfoDictionaryKey: "ServerConfigFile") as? String {
+            if let url = Bundle.main.url(forResource: config, withExtension: "plist") {
+                if let data = try? Data(contentsOf: url), let result = try? PropertyListDecoder().decode(Root.self, from: data) {
+                return result.marvelServerURL
+                }
+            }
+        }
+        return ""
     }
     
     // MARK: - setters
