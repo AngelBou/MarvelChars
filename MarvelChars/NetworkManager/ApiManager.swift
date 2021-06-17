@@ -34,11 +34,9 @@ enum Services {
     case imageService
 }
 
-struct Root : Decodable {
-    let marvelServerURL : String
+struct Root: Decodable {
+    let marvelServerURL: String
 }
-
-
 
 enum FakeServiceResponse {
     case json
