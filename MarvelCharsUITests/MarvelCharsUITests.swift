@@ -99,7 +99,7 @@ class MarvelCharsUITests: XCTestCase {
         
     // Test with call to service
     // NOTE this test can fail depending on the result given by the server
-    func testCharListNavigateToDetailWhenTapOnItemRealServer() throws {
+    func testCharListNavigateToDetailWhenTapOnTestServer() throws {
         
         configureApp(fakeData: "no")
         app.launch()
