@@ -7,17 +7,18 @@
 
 import Foundation
 
-protocol CharListInteractorProtocol {
-    var presenter: CharListPresenterProtocol? { get set }
-    var apiManager: ApiManager? {get set}
-
+protocol CharListInteractorInputProtocol {
     func getCharacters()
     func getMoreCharacters()
 }
 
-class CharListInteractor: CharListInteractorProtocol {
+protocol CharListInteractorOutputProtocol {
+    var apiManager: ApiManager? {get set}
+    var presenter: CharListPresenterOutputProtocol? { get set }
+}
 
-    weak var presenter: CharListPresenterProtocol?
+class CharListInteractor: CharListInteractorInputProtocol, CharListInteractorOutputProtocol {
+    weak var presenter: CharListPresenterOutputProtocol?
     var apiManager: ApiManager?
 
     private var page: Int = 0

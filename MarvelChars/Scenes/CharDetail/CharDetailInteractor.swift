@@ -8,16 +8,18 @@
 import Foundation
 import UIKit
 
-protocol CharDetailInteractorProtocol {
-    var presenter: CharDetailPresenterProtocol? { get set }
-    var apiManager: ApiManager? {get set}
-
+protocol CharDetailInteractorInputProtocol {
     func getPhoto(for character: Character)
 }
 
-class CharDetailInteractor: CharDetailInteractorProtocol {
+protocol CharDetailInteractorOutputProtocol {
+    var presenter: CharDetailPresenterOutputProtocol? { get set }
+    var apiManager: ApiManager? {get set}
+}
 
-    weak var presenter: CharDetailPresenterProtocol?
+class CharDetailInteractor: CharDetailInteractorInputProtocol, CharDetailInteractorOutputProtocol {
+
+    weak var presenter: CharDetailPresenterOutputProtocol?
 
     var apiManager: ApiManager?
 

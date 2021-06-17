@@ -63,10 +63,11 @@ class CharDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.title, char.name, "Character name must be shown correcty")
         XCTAssertEqual(sut.descripLabel.text, char.description, "Character description must be shown correcty")
     }
+}
 
     // MARK: - Spy Classes
-    class CharDetailPresenterSpy: CharDetailPresenterProtocol {
-        var interactor: CharDetailInteractorProtocol?
+    class CharDetailPresenterSpy: CharDetailPresenterInputProtocol {
+        var interactor: CharDetailInteractorInputProtocol?
         
         var router: CharDetailRouterProtocol?
         var view: CharDetailViewControllerProtocol?
@@ -84,8 +85,8 @@ class CharDetailViewControllerTests: XCTestCase {
         }
     }
     
-    class CharDetailInteractorSpy: CharDetailInteractorProtocol {
-        var presenter: CharDetailPresenterProtocol?
+    class CharDetailInteractorSpy: CharDetailInteractorInputProtocol {
+        var presenter: CharDetailPresenterOutputProtocol?
         
         var apiManager: ApiManager?
         
@@ -96,4 +97,3 @@ class CharDetailViewControllerTests: XCTestCase {
             }
         }
     }
-}

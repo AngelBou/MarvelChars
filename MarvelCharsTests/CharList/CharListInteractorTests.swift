@@ -78,8 +78,8 @@ class CharListInteractorTests: XCTestCase {
     }
 
     // MARK: - Spy Classes
-    class CharListPresenterSpy: CharListPresenterProtocol {
-        var interactor: CharListInteractorProtocol?
+    class CharListPresenterSpy: CharListPresenterOutputProtocol {
+        var interactor: CharListInteractorInputProtocol?
         var router: CharListRouterProtocol?
         var view: CharListViewControllerProtocol?
 

@@ -8,29 +8,30 @@
 import Foundation
 import UIKit
 
-protocol CharListPresenterProtocol: class {
-    var interactor: CharListInteractorProtocol? { get set }
-    var router: CharListRouterProtocol? { get set }
-    var view: CharListViewControllerProtocol? { get set }
-
+protocol CharListPresenterInputProtocol: class {
     // View Events
     func viewLoaded()
     func viewEndOfTableReached()
+    // Navigation
+    func navigateToDetail(indexPath: IndexPath)
+}
 
+protocol CharListPresenterOutputProtocol: class {
+    var interactor: CharListInteractorInputProtocol? { get set }
+    var router: CharListRouterProtocol? { get set }
+    var view: CharListViewControllerProtocol? { get set }
+    
     // Presentation
     func presentCharacters(_ characters: [Character])
     func presentMoreCharacters(_ characters: [Character])
     // Messages
     func presentError(_ error: Error)
     func presentMessage(_ message: String, title: String)
-    
-    // Navigation
-    func navigateToDetail(indexPath: IndexPath)
 }
 
-class CharListPresenter: CharListPresenterProtocol {
+class CharListPresenter: CharListPresenterInputProtocol, CharListPresenterOutputProtocol {
 
-    var interactor: CharListInteractorProtocol?
+    var interactor: CharListInteractorInputProtocol?
     var router: CharListRouterProtocol?
     weak var view: CharListViewControllerProtocol?
 

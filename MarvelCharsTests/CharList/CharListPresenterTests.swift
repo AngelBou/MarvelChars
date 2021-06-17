@@ -57,9 +57,9 @@ class CharListPresenterTests: XCTestCase {
     }
 }
 
-class CharListInteractorSpy: CharListInteractorProtocol {
+class CharListInteractorSpy: CharListInteractorInputProtocol {
 
-    var presenter: CharListPresenterProtocol?
+    var presenter: CharListPresenterOutputProtocol?
     var apiManager: ApiManager?
 
     var getCharactersCalled: Bool = false
@@ -75,7 +75,7 @@ class CharListInteractorSpy: CharListInteractorProtocol {
 }
 
 class CharListViewControllerSpy: CharListViewControllerProtocol {
-    var presenter: CharListPresenter?
+    var presenter: CharListPresenterInputProtocol?
 
     var navigationController: UINavigationController?
 

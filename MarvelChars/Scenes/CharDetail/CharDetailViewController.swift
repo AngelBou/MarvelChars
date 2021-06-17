@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CharDetailViewControllerProtocol: class {
-    var presenter: CharDetailPresenterProtocol? { get set }
+    var presenter: CharDetailPresenterInputProtocol? { get set }
     
     // Display
     func displayImage(_ image: UIImage)
@@ -19,7 +19,7 @@ protocol CharDetailViewControllerProtocol: class {
 class CharDetailViewController: UIViewController, CharDetailViewControllerProtocol {
 
     // MARK: - Properties
-    var presenter: CharDetailPresenterProtocol?
+    var presenter: CharDetailPresenterInputProtocol?
 
     lazy var characterImageView: UIImageView = {
         let imageView = UIImageView()

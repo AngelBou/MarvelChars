@@ -8,21 +8,22 @@
 import Foundation
 import UIKit
 
-protocol CharDetailPresenterProtocol: class {
-    var interactor: CharDetailInteractorProtocol? { get set }
-    var router: CharDetailRouterProtocol? { get set }
-    var view: CharDetailViewControllerProtocol? { get set }
-
-    // Presenter methods
-    func presentPhoto(_ photo: UIImage)
-
+protocol CharDetailPresenterInputProtocol: class {
     // Events
     func viewLoaded()
 }
+protocol CharDetailPresenterOutputProtocol: class {
+    var interactor: CharDetailInteractorInputProtocol? { get set }
+    var router: CharDetailRouterProtocol? { get set }
+    var view: CharDetailViewControllerProtocol? { get set }
+    
+    // Presenter methods
+    func presentPhoto(_ photo: UIImage)
+}
 
-class CharDetailPresenter: CharDetailPresenterProtocol {
+class CharDetailPresenter: CharDetailPresenterInputProtocol, CharDetailPresenterOutputProtocol {
 
-    var interactor: CharDetailInteractorProtocol?
+    var interactor: CharDetailInteractorInputProtocol?
     var router: CharDetailRouterProtocol?
     weak var view: CharDetailViewControllerProtocol?
 

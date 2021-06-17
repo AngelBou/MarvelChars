@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CharListViewControllerProtocol: class {
-    var presenter: CharListPresenter? { get set }
+    var presenter: CharListPresenterInputProtocol? { get set }
 
     func refresh()
     func displayCharacters(_ characters: [Character])
@@ -20,7 +20,7 @@ protocol CharListViewControllerProtocol: class {
 class CharListViewController: UIViewController, CharListViewControllerProtocol {
 
     // MARK: - Properties
-    var presenter: CharListPresenter?
+    var presenter: CharListPresenterInputProtocol?
     let table = UITableView()
     var characters: [Character]? = []
 
