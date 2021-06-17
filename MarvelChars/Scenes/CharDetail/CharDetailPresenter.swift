@@ -13,8 +13,6 @@ protocol CharDetailPresenterProtocol: class {
     var router: CharDetailRouterProtocol? { get set }
     var view: CharDetailViewControllerProtocol? { get set }
 
-    var character: Character? {get set}
-
     // Presenter methods
     func presentPhoto(_ photo: UIImage)
 
@@ -28,12 +26,16 @@ class CharDetailPresenter: CharDetailPresenterProtocol {
     var router: CharDetailRouterProtocol?
     weak var view: CharDetailViewControllerProtocol?
 
-    var character: Character?
+    private var character: Character?
 
     func viewLoaded() {
         displayName()
         displayDescription()
         loadCharacterPhoto()
+    }
+    
+    init(character: Character) {
+        self.character = character
     }
 
     // MARK: - Presenter Methods

@@ -11,16 +11,17 @@ class CharListConfigurator {
 
     static func createScene() -> UIViewController {
 
-        let viewController = CharListViewController()
-
-        let presenter = CharListPresenter()
-        viewController.presenter = presenter
-        viewController.presenter?.router = CharListRouter()
-        viewController.presenter?.view = viewController
         let interactor = CharListInteractor()
         interactor.apiManager = ApiManager.sharedInstance
-        viewController.presenter?.interactor = interactor
-        viewController.presenter?.interactor?.presenter = presenter
+
+        let presenter = CharListPresenter()
+        presenter.router = CharListRouter()
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        
+        let viewController = CharListViewController()
+        presenter.view = viewController
+        viewController.presenter = presenter
 
         return viewController
     }

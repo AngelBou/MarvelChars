@@ -95,25 +95,11 @@ final class ApiManager {
         let dataTask = session.dataTask(with: URLRequest(url: url)) { data, response, error in
 
             DispatchQueue.main.async {
-                if let error = error {
-                    completion(Result.failure(.transportError(error)))
-                    return
+                if let error = self.networkErrorFrom(response, error) {
+                    completion(.failure(error))
+                } else {
+                    completion(Result.success(data))
                 }
-
-                if let response = response as? HTTPURLResponse {
-                    let status = response.statusCode
-                    guard (200...299).contains(status) else {
-                        completion(Result.failure(.serverSideError(status)))
-                        return
-                    }
-                    if status == 499 {
-                        print("invalid session response")
-                        completion(.failure(.invalidSession))
-                    }
-                }
-
-                completion(Result.success(data))
-
             }
         }
         dataTask.resume()
@@ -126,25 +112,36 @@ final class ApiManager {
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
 
             DispatchQueue.main.async {
-                if let error = error {
-                    completion(Result.failure(.transportError(error)))
-                    return
+                if let error = self.networkErrorFrom(response, error) {
+                    completion(.failure(error))
+                } else {
+                    completion(Result.success(data))
                 }
-
-                if let response = response as? HTTPURLResponse {
-                    let status = response.statusCode
-                    guard (200...299).contains(status) else {
-                        completion(Result.failure(.serverSideError(status)))
-                        return
-                    }
-                    if status == 499 {
-                        print("invalid session response")
-                        completion(.failure(.invalidSession))
-                    }
-                }
-                completion(Result.success(data))
             }
         }
         dataTask.resume()
+    }
+    
+    func networkErrorFrom(_ response: URLResponse?, _ error: Error?) -> NetworkError? {
+        if let error = error {
+            return .transportError(error)
+        }
+        
+        if let response = response as? HTTPURLResponse {
+            let status = response.statusCode
+            switch status {
+            case 200...299:
+                // Response Ok
+                return nil
+            case 499:
+                return .invalidSession
+            default:
+                return .serverSideError(status)
+            }
+        } else {
+            // Ok
+            return nil
+        }
+        
     }
 }

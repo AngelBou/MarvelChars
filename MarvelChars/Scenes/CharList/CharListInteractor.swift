@@ -37,50 +37,32 @@ class CharListInteractor: CharListInteractorProtocol {
         }
         
         apiManager?.charactersService?.getCharacters(nameStartsWith: searchString,
-                                                      limit: 100,
-                                                      page: page) { (result) in
+                                                     limit: 100,
+                                                     page: page) { (result) in
             switch result {
             case .success(let json):
-                self.getCharactersFromResponse(json: json) { (characters) in
-
-                    var characterList: [Character] = []
-                    if let characters = characters {
-                        characterList = characters
+                
+                var characterList: [Character] = []
+                
+                if let data: [String: Any] = json, let dataDict: [String: Any] = data[JsonField.data] as? [String: Any] {
+                    if let resultsArray: [[String: Any]] = dataDict[JsonField.results] as? [[String: Any]] {
+                        do {
+                            let jsonData = try JSONSerialization.data(withJSONObject: resultsArray, options: .prettyPrinted)
+                            characterList = try JSONDecoder().decode([Character].self, from: jsonData)
+                        } catch  let error {
+                            print(error.localizedDescription)
+                        }
                     }
-
-                    if pagination {
-                        self.presenter?.presentMoreCharacters(characterList)
-                    } else {
-                        self.presenter?.presentCharacters(characterList)
-                    }
+                }
+                
+                if pagination {
+                    self.presenter?.presentMoreCharacters(characterList)
+                } else {
+                    self.presenter?.presentCharacters(characterList)
                 }
             case .failure(let error):
                 self.presenter?.presentError(error)
             }
         }
     }
-
-    func getCharactersFromResponse(json: [String: Any]?,
-                                   completion: @escaping(_ characters: [Character]?) -> Void) {
-
-    guard let data: [String: Any] = json,
-          let dataDict: [String: Any] = data[JsonField.data] as? [String: Any],
-          let resultsArray: [[String: Any]] = dataDict[JsonField.results] as? [[String: Any]] else {
-        return completion(nil)
-    }
-
-    var charactersList: [Character] = []
-    for character in resultsArray {
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: character,
-                                                      options: .prettyPrinted)
-            let oneChar = try JSONDecoder().decode(Character.self, from: jsonData)
-            charactersList.append(oneChar)
-        } catch  let error {
-            print(error.localizedDescription)
-        }
-    }
-    completion(charactersList)
-}
-
 }

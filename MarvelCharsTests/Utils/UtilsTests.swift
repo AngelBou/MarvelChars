@@ -23,7 +23,7 @@ class UtilsTests: XCTestCase {
         let testString = "Hello"
 
         // When
-        let md5HexString = MD5(testString)
+        let md5HexString = Utils.MD5(testString)
 
         // Then
         XCTAssertEqual(md5HexString, "8b1a9953c4611296a827abf8c47804d7", "MD5 of 'Hello' string must be 8b1a9953c4611296a827abf8c47804d7")

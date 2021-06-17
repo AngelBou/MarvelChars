@@ -136,7 +136,7 @@ class CharListInteractorTests: XCTestCase {
             getCharactersCalled = true
             if success {
                 let bundle = Bundle(for: type(of: self))
-                let characters = readJSONFromFile(name: "Loki", bundle: bundle)
+                let characters = Utils.readJSONFromFile(name: "Loki", bundle: bundle)
                 return completion(.success(characters))
             } else {
                 return completion(.failure(.networkFailure))

@@ -49,12 +49,11 @@ class CharDetailViewControllerTests: XCTestCase {
                              thumbnail: thumbnail)
         
         // Connect a presenter class with fake interactor
-        let presenter = CharDetailPresenter()
+        let presenter = CharDetailPresenter(character: char)
         presenter.view = sut
         let interactor = CharDetailInteractorSpy()
         interactor.presenter = presenter
         presenter.interactor = interactor
-        presenter.character = char
         sut.presenter = presenter
         
         // When

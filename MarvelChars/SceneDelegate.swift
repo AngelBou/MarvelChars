@@ -33,8 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let character = Character(id: 5,
                                           name: "Spiderman",
                                           description: "Description of Character Text")
-                if let detailViewController = CharDetailConfigurator.createScene() as? CharDetailViewController {
-                    detailViewController.presenter?.character = character
+                if let detailViewController = CharDetailConfigurator.createScene(character: character) as? CharDetailViewController {
                     return detailViewController
                 } else {
                     fallthrough

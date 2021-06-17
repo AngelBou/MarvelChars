@@ -55,7 +55,7 @@ This app is made to show the Viper Architecture and the unit testing, ui testing
 |   +-- NetWorkManager  
 |       + -- Services
 +-- Supporting Files    (localization)
-+-- Mock                (json files)
 +-- MarvelCharTests     (Unit testing)
+|       + -- Mock       (json files)
 +-- MarvelCharUITests   (UI testing)
 ```

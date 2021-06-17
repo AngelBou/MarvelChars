@@ -17,8 +17,8 @@ class CharListRouter: CharListRouterProtocol {
 
         guard let viewController = view as? UIViewController else { return }
 
-        guard let detailViewController = CharDetailConfigurator.createScene() as? CharDetailViewController else { return }
-        detailViewController.presenter?.character = character
-        viewController.navigationController?.pushViewController(detailViewController, animated: true)
+        if let detailViewController = CharDetailConfigurator.createScene(character: character) as? CharDetailViewController {
+            viewController.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }

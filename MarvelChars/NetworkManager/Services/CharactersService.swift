@@ -35,7 +35,7 @@ class CharactersService: CharactersServiceProtocol, ServiceProtocol {
         switch fakeResponse {
         case .json:
             let bundle = Bundle(for: type(of: self))
-            let json = readJSONFromFile(name: jsonName, bundle: bundle)
+            let json = Utils.readJSONFromFile(name: jsonName, bundle: bundle)
             return .success(json)
         case .jsonData:
             return .success(jsonFake)
@@ -60,7 +60,7 @@ class CharactersService: CharactersServiceProtocol, ServiceProtocol {
         
         // Parameters
         let timestamp = String(Date().timeIntervalSince1970)
-        let hash = MD5(timestamp + MarvelAPI.privateKey + MarvelAPI.publicKey).lowercased()
+        let hash = Utils.MD5(timestamp + MarvelAPI.privateKey + MarvelAPI.publicKey).lowercased()
 
         let serviceLimit = limit ?? defaultLimit
 

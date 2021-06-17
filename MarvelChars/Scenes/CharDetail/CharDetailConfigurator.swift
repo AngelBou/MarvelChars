@@ -9,18 +9,19 @@ import UIKit
 
 class CharDetailConfigurator {
 
-    static func createScene() -> UIViewController {
+    static func createScene(character: Character) -> UIViewController {
 
-        let viewController = CharDetailViewController()
-
-        let presenter = CharDetailPresenter()
-        viewController.presenter = presenter
-        viewController.presenter?.router = CharDetailRouter()
-        viewController.presenter?.view = viewController
         let interactor = CharDetailInteractor()
         interactor.apiManager = ApiManager.sharedInstance
-        viewController.presenter?.interactor = interactor
-        viewController.presenter?.interactor?.presenter = presenter
+
+        let presenter = CharDetailPresenter(character: character)
+        presenter.router = CharDetailRouter()
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        
+        let viewController = CharDetailViewController()
+        presenter.view = viewController
+        viewController.presenter = presenter
 
         return viewController
     }
